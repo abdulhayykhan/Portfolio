@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
+
+Personal portfolio built with Next.js, React 19, and Tailwind CSS v4. Showcases AI, backend, and full-stack projects with dark/light theming, animated cards, and production SEO.
+
+## Tech Stack
+
+- **Next.js** (App Router) · **React 19** · **TypeScript**
+- **Tailwind CSS v4** · **Google Fonts** via `next/font`
+
+## Features
+
+- Hero, About, Experience, Projects, Stack, and Contact sections — fully responsive
+- Dark/light theme toggle
+- Animated reveal, hover states, and 3D tilt on pointer devices
+- SEO metadata, Open Graph image, `robots.txt`, `sitemap.xml`
+- Resume download: [`public/Abdul_Hayy_Khan_Resume.pdf`](public/Abdul_Hayy_Khan_Resume.pdf)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---|---|
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run start` | Start production build |
+| `npm run lint` | Lint check |
 
-## Learn More
+## Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+No config required to run locally. For deployment:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Falls back to Vercel deployment URL in production, `http://localhost:3000` locally.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploy to Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push to GitHub
+2. Import in Vercel
+3. Set `NEXT_PUBLIC_SITE_URL` for canonical and social URLs
+4. Deploy with default Next.js settings
+
+## Project Structure
+```
+app/
+├── page.tsx                    # Landing page, theme state
+├── components/
+│   └── portfolio-sections.tsx  # All portfolio sections
+├── lib/
+│   ├── portfolio-data.ts       # Projects, stats, resume path
+│   └── site-config.ts          # Site metadata and URL helper
+├── opengraph-image.tsx         # Social preview image
+├── robots.ts                   # Robots metadata route
+└── sitemap.ts                  # Sitemap route
+public/                         # Static assets, resume PDF, favicon
+```
+
+## 📄 License
+
+This project is open-source and available for educational and commercial use under the MIT License.
+
+---
+
+**Made with ❤️ by [Abdul Hayy Khan](https://www.linkedin.com/in/abdulhayykhan/)**

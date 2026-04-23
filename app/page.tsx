@@ -1,64 +1,156 @@
-import Image from "next/image";
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import {
+  AboutSection,
+  BackgroundLayers,
+  ContactSection,
+  ExperienceSection,
+  HeroSection,
+  LanguageDistributionCard,
+  PortfolioNav,
+  ProjectsSection,
+  SpotlightCard,
+  StackSection,
+} from "@/app/components/portfolio-sections";
+import { allProjects, getLanguageBreakdown, stats } from "@/app/lib/portfolio-data";
 
 export default function Home() {
+  const [isDark, setIsDark] = useState<boolean>(() => {
+    if (typeof window === "undefined") {
+      return true;
+    }
+    return window.localStorage.getItem("portfolio-theme") !== "light";
+  });
+  const [hasHydrated, setHasHydrated] = useState(false);
+
+  const languageBreakdown = useMemo(() => getLanguageBreakdown(allProjects), []);
+
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      setHasHydrated(true);
+    });
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
+    if (!hasHydrated) {
+      return;
+    }
+    window.localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+  }, [hasHydrated, isDark]);
+
+  useEffect(() => {
+    if (!hasHydrated) {
+      return;
+    }
+
+    const pointerMedia = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(".terminal-card-3d"));
+    let detachListeners: Array<() => void> = [];
+
+    const resetCard = (card: HTMLElement) => {
+      card.style.setProperty("--tilt-rotate-x", "0deg");
+      card.style.setProperty("--tilt-rotate-y", "0deg");
+      card.style.setProperty("--tilt-z", "0px");
+      card.style.setProperty("--tilt-scale", "1");
+      card.style.setProperty("--tilt-glow-x", "50%");
+      card.style.setProperty("--tilt-glow-y", "50%");
+      card.dataset.tiltActive = "false";
+    };
+
+    const bindCard = (card: HTMLElement) => {
+      const handleMove = (event: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        const relativeX = (event.clientX - rect.left) / rect.width;
+        const relativeY = (event.clientY - rect.top) / rect.height;
+
+        const clampedX = Math.min(1, Math.max(0, relativeX));
+        const clampedY = Math.min(1, Math.max(0, relativeY));
+
+        const rotateY = (clampedX - 0.5) * 12;
+        const rotateX = (0.5 - clampedY) * 10;
+
+        card.style.setProperty("--tilt-rotate-x", `${rotateX.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-rotate-y", `${rotateY.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-z", "14px");
+        card.style.setProperty("--tilt-scale", "1.012");
+        card.style.setProperty("--tilt-glow-x", `${(clampedX * 100).toFixed(1)}%`);
+        card.style.setProperty("--tilt-glow-y", `${(clampedY * 100).toFixed(1)}%`);
+        card.dataset.tiltActive = "true";
+      };
+
+      const handleLeave = () => {
+        resetCard(card);
+      };
+
+      card.addEventListener("mousemove", handleMove);
+      card.addEventListener("mouseleave", handleLeave);
+
+      detachListeners.push(() => {
+        card.removeEventListener("mousemove", handleMove);
+        card.removeEventListener("mouseleave", handleLeave);
+        resetCard(card);
+      });
+    };
+
+    const applyPointerMode = () => {
+      detachListeners.forEach((detach) => detach());
+      detachListeners = [];
+
+      cards.forEach((card) => resetCard(card));
+
+      if (pointerMedia.matches) {
+        cards.forEach((card) => bindCard(card));
+      }
+    };
+
+    applyPointerMode();
+
+    const handlePointerChange = () => {
+      applyPointerMode();
+    };
+
+    pointerMedia.addEventListener("change", handlePointerChange);
+
+    return () => {
+      pointerMedia.removeEventListener("change", handlePointerChange);
+      detachListeners.forEach((detach) => detach());
+    };
+  }, [hasHydrated]);
+
+  if (!hasHydrated) {
+    return <div className="min-h-screen bg-[#02050b]" aria-hidden="true" />;
+  }
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div
+      className={`min-h-screen selection:bg-cyan-400/30 transition-colors duration-300 ${
+        isDark
+          ? "terminal-theme-dark terminal-skin bg-[#02050b] text-[#9cff98]"
+          : "terminal-theme-light bg-[#f4fbff] text-slate-900"
+      }`}
+    >
+      <BackgroundLayers isDark={isDark} />
+
+      <main className="terminal-perspective relative mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-6 md:px-8 md:py-10">
+        <PortfolioNav isDark={isDark} onToggleTheme={() => setIsDark((prev) => !prev)} />
+
+        <HeroSection isDark={isDark} stats={stats} />
+
+        <AboutSection isDark={isDark} />
+
+        <section className="grid gap-4 lg:grid-cols-2">
+          <ExperienceSection isDark={isDark} />
+          <SpotlightCard isDark={isDark} />
+          <LanguageDistributionCard isDark={isDark} languageBreakdown={languageBreakdown} />
+        </section>
+
+        <ProjectsSection isDark={isDark} projects={allProjects} />
+
+        <StackSection isDark={isDark} />
+
+        <ContactSection isDark={isDark} />
       </main>
     </div>
   );
