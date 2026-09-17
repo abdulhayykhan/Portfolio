@@ -57,8 +57,8 @@ const PROJECTS = [
     title: "QATRA-Web-App",
     description:
       "Emergency blood response platform connecting verified seekers to eligible donors across Pakistan in real time. Built with FastAPI, Leaflet, and Vanilla PWA.",
-    language: "javascript",
-    tags: ["fastapi", "pwa", "leaflet", "healthcare", "full-stack", "backend"],
+    language: "python",
+    tags: ["fastapi", "pwa", "leaflet", "healthcare", "full-stack", "backend", "python"],
     githubUrl: "https://github.com/abdulhayykhan/QATRA-Web-App",
     featured: false,
   },
@@ -66,8 +66,8 @@ const PROJECTS = [
     title: "ViralVantage-AI",
     description:
       "Short-form video analytics and hook optimization engine built with Next.js, FastAPI, and Gemini multimodal AI.",
-    language: "typescript",
-    tags: ["ai", "nextjs", "fastapi", "gemini", "video-analytics", "full-stack"],
+    language: "python",
+    tags: ["ai", "nextjs", "fastapi", "gemini", "video-analytics", "full-stack", "python"],
     githubUrl: "https://github.com/abdulhayykhan/ViralVantage-AI",
     featured: false,
   },
@@ -83,9 +83,9 @@ const PROJECTS = [
   {
     title: "PriceDrift",
     description:
-      "Dual-model housing analytics implementing Linear and Logistic Regression from scratch in NumPy-style JavaScript with interactive in-browser inference. No Python ML libraries — regression built entirely in vanilla JS.",
-    language: "javascript",
-    tags: ["ml", "regression", "from-scratch", "javascript", "analytics"],
+      "Dual-model housing analytics implementing Linear and Logistic Regression from scratch — Python backend with interactive in-browser inference and data visualizations.",
+    language: "python",
+    tags: ["ml", "regression", "from-scratch", "python", "analytics"],
     githubUrl: "https://github.com/abdulhayykhan/PriceDrift",
     featured: false,
   },
