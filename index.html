@@ -26,12 +26,12 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./css/style.css">
 
-  <!-- Instant Pre-Hydration Theme Script (Prevents FOUC) -->
+  <!-- Instant Pre-Hydration Theme Script (Prevents FOUC, strictly defaults to dark) -->
   <script>
     (function () {
       try {
         var saved = localStorage.getItem("portfolio-theme");
-        var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        var theme = saved === "light" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", theme);
       } catch (e) {}
     })();
@@ -421,6 +421,45 @@
       <p>terminal://portfolio &bull; crafted with vanilla html/css/js &bull; zero build dependencies</p>
       <p>Made with &#10084; by <a href="https://www.linkedin.com/in/abdulhayykhan/" target="_blank" rel="noopener noreferrer">Abdul Hayy Khan</a> &bull; Open-source under MIT License</p>
     </footer>
+  </div>
+
+  <!-- Theme Switch Confirmation Modal (Cyber-Terminal Warning) -->
+  <div
+    class="theme-modal-backdrop"
+    id="theme-warning-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="theme-modal-title"
+    aria-describedby="theme-modal-desc"
+    hidden
+  >
+    <div class="theme-modal-box terminal-panel">
+      <div class="terminal-titlebar">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-prompt-path">system_prompt --theme-warning</span>
+      </div>
+
+      <div class="theme-modal-content">
+        <span class="theme-modal-badge">&#9888; LOW_CONTRAST_ALERT</span>
+        <h3 class="theme-modal-title" id="theme-modal-title">Light mode isn&apos;t recommended</h3>
+        <p class="theme-modal-desc" id="theme-modal-desc">
+          Light mode doesn&apos;t look good in a cyber terminal aesthetic; dark mode is strongly preferred for readability and ambiance. Do you want to switch anyway?
+        </p>
+
+        <div class="theme-modal-actions">
+          <button type="button" class="btn-primary" id="btn-keep-dark">
+            Keep Dark Mode
+          </button>
+          <button type="button" class="btn-outline btn-switch-anyway" id="btn-switch-anyway">
+            Switch Anyway
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Projects data (must load before main.js) -->

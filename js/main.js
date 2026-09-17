@@ -11,17 +11,20 @@
   "use strict";
 
   // --------------------------------------------------------------------------
-  // 1. Theme Management (Dark / Light)
+  // 1. Theme Management (Dark by Default with Light-Mode Intercept Modal)
   // --------------------------------------------------------------------------
   const themeToggleBtn = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
+  const themeModal = document.getElementById("theme-warning-modal");
+  const btnKeepDark = document.getElementById("btn-keep-dark");
+  const btnSwitchAnyway = document.getElementById("btn-switch-anyway");
 
   function getPreferredTheme() {
     const saved = localStorage.getItem("portfolio-theme");
     if (saved === "light" || saved === "dark") {
       return saved;
     }
-    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    return "dark"; // Default is strictly dark
   }
 
   function applyTheme(theme) {
@@ -39,12 +42,67 @@
     }
   }
 
+  function openThemeModal() {
+    if (!themeModal) return;
+    themeModal.removeAttribute("hidden");
+    requestAnimationFrame(function () {
+      themeModal.classList.add("modal-visible");
+    });
+    if (btnKeepDark) {
+      btnKeepDark.focus();
+    }
+  }
+
+  function closeThemeModal() {
+    if (!themeModal) return;
+    themeModal.classList.remove("modal-visible");
+    setTimeout(function () {
+      themeModal.setAttribute("hidden", "");
+    }, 200);
+    if (themeToggleBtn) {
+      themeToggleBtn.focus();
+    }
+  }
+
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", function () {
       const current = document.documentElement.getAttribute("data-theme") || "dark";
-      applyTheme(current === "dark" ? "light" : "dark");
+      if (current === "dark") {
+        // Intercept light mode request and trigger cyber-terminal warning dialog
+        openThemeModal();
+      } else {
+        // Immediate switch back to dark mode
+        applyTheme("dark");
+      }
     });
   }
+
+  if (btnKeepDark) {
+    btnKeepDark.addEventListener("click", function () {
+      closeThemeModal();
+    });
+  }
+
+  if (btnSwitchAnyway) {
+    btnSwitchAnyway.addEventListener("click", function () {
+      applyTheme("light");
+      closeThemeModal();
+    });
+  }
+
+  if (themeModal) {
+    themeModal.addEventListener("click", function (e) {
+      if (e.target === themeModal) {
+        closeThemeModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && themeModal && !themeModal.hasAttribute("hidden")) {
+      closeThemeModal();
+    }
+  });
 
   // --------------------------------------------------------------------------
   // 2. 3D Card Tilt on Pointer Devices
