@@ -1,7 +1,10 @@
 /**
  * Cyber-Terminal Vanilla JavaScript
  * Author: Abdul Hayy Khan
- * Features: Theme toggle, 3D pointer tilt, live search & category filter
+ * Features: Theme toggle, 3D pointer tilt, data-driven project rendering,
+ *           live search & category filter
+ *
+ * Depends on: js/projects-data.js  (must be loaded before this file)
  */
 
 (function () {
@@ -89,18 +92,105 @@
   }
 
   // --------------------------------------------------------------------------
-  // 3. Live Project Search & Filter
+  // 3. Data-Driven Project Rendering
   // --------------------------------------------------------------------------
-  const searchInput = document.getElementById("project-search");
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
-  const countBadge = document.getElementById("project-count-badge");
-  const noResults = document.getElementById("no-results");
 
+  /**
+   * Build a single project card element from a project data object.
+   * @param {Object} project
+   * @param {number} index  1-based display index
+   * @returns {HTMLElement}
+   */
+  function buildProjectCard(project, index) {
+    const article = document.createElement("article");
+    article.className =
+      "terminal-panel project-card tilt-card" + (project.featured ? " project-card--flagship" : "");
+    article.setAttribute("data-title", project.title);
+    article.setAttribute("data-lang", project.language);
+    article.setAttribute("data-tags", project.tags.join(" "));
+    article.setAttribute("data-desc", project.description);
+
+    const indexStr = String(index).padStart(2, "0");
+    const slugified = project.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+    const langLabel =
+      project.language.charAt(0).toUpperCase() + project.language.slice(1);
+
+    const flagshipBadge = project.featured
+      ? `<span class="chip chip--flagship" aria-label="Flagship project">★ flagship</span>`
+      : "";
+
+    article.innerHTML = `
+      <div class="project-card-header">
+        <span class="project-repo-index">#${indexStr} repo://${slugified}</span>
+        <h3 class="project-card-title">${escapeHtml(project.title)}</h3>
+        ${flagshipBadge}
+      </div>
+      <p class="project-card-desc">${escapeHtml(project.description)}</p>
+      <div class="project-card-footer">
+        <span class="chip">${escapeHtml(langLabel)}</span>
+        <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+      </div>`;
+
+    return article;
+  }
+
+  /** Minimal HTML escaping — avoids XSS in data strings */
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  /** Render all PROJECTS into #projects-grid and update the header counts. */
+  function renderProjectGrid() {
+    const grid = document.getElementById("projects-grid");
+    if (!grid || typeof PROJECTS === "undefined") return;
+
+    const total = PROJECTS.length;
+
+    // Update header title count
+    const titleEl = document.querySelector(".projects-title");
+    if (titleEl) {
+      titleEl.textContent = `all_projects --source github --count ${total}`;
+    }
+
+    // Render cards — featured first, then the rest (order already matches in array)
+    PROJECTS.forEach(function (project, i) {
+      grid.appendChild(buildProjectCard(project, i + 1));
+    });
+
+    // Insert "view all repos" link after cards
+    const viewAll = document.createElement("div");
+    viewAll.className = "view-all-repos";
+    viewAll.innerHTML = `<a href="https://github.com/abdulhayykhan?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-outline">
+      view all ${50}+ repos on github →
+    </a>`;
+    grid.appendChild(viewAll);
+
+    // Insert no-results message
+    const noRes = document.createElement("div");
+    noRes.id = "no-results";
+    noRes.className = "no-results-msg";
+    noRes.style.display = "none";
+    noRes.innerHTML = "<p>&gt; No matching repositories found. Try another search query or filter.</p>";
+    grid.appendChild(noRes);
+  }
+
+  // --------------------------------------------------------------------------
+  // 4. Live Project Search & Filter
+  // --------------------------------------------------------------------------
   let currentCategory = "all";
   let currentSearch = "";
 
   function filterProjects() {
+    const projectCards = document.querySelectorAll(".project-card");
+    const countBadge = document.getElementById("project-count-badge");
+    const noResults = document.getElementById("no-results");
+    const total = projectCards.length;
+
     let visibleCount = 0;
     const query = currentSearch.toLowerCase().trim();
 
@@ -131,7 +221,7 @@
     });
 
     if (countBadge) {
-      countBadge.textContent = `showing: ${visibleCount} / ${projectCards.length} repos`;
+      countBadge.textContent = `showing: ${visibleCount} / ${total} repos`;
     }
 
     if (noResults) {
@@ -139,22 +229,34 @@
     }
   }
 
-  if (searchInput) {
-    searchInput.addEventListener("input", function (e) {
-      currentSearch = e.target.value;
-      filterProjects();
+  function initSearch() {
+    const searchInput = document.getElementById("project-search");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function (e) {
+        currentSearch = e.target.value;
+        filterProjects();
+      });
+    }
+
+    filterButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        filterButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCategory = (btn.getAttribute("data-filter") || "all").toLowerCase();
+        filterProjects();
+      });
     });
+
+    // Set initial badge count
+    filterProjects();
   }
 
-  filterButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentCategory = (btn.getAttribute("data-filter") || "all").toLowerCase();
-      filterProjects();
-    });
-  });
-
-  // Initial sync
+  // --------------------------------------------------------------------------
+  // 5. Init
+  // --------------------------------------------------------------------------
   applyTheme(getPreferredTheme());
+  renderProjectGrid();
+  initSearch();
 })();
