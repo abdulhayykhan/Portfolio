@@ -46,9 +46,9 @@
   <div class="container">
     <!-- Terminal Sticky Navigation -->
     <nav class="nav-panel" id="navbar" aria-label="Main Navigation">
-      <div class="nav-brand" style="display: flex; align-items: center; gap: 0.55rem;">
-        <img src="./icon.svg" alt="AHK Logo" width="24" height="24" style="border-radius: 6px; box-shadow: 0 0 8px rgba(120, 255, 107, 0.4);">
-        <span>terminal://abdulhayykhan</span>
+      <div class="nav-brand">
+        <img src="./icon.svg" alt="AHK Logo" class="nav-brand-icon" width="24" height="24">
+        <span class="nav-brand-text">terminal://abdulhayykhan</span>
       </div>
       <div class="nav-links">
         <a href="#about" class="nav-btn">about</a>
@@ -288,13 +288,13 @@
       </div>
 
       <!-- Project cards rendered here by main.js from projects-data.js -->
-      <div class="grid-3col" id="projects-grid" style="margin-top: 1.5rem;"></div>
+      <div class="grid-3col projects-grid" id="projects-grid"></div>
     </section>
 
     <!-- Tech Stack Section -->
     <section class="terminal-panel section-card" id="stack">
-      <h2 class="card-title" style="margin-top: 0;">tech_stack --print</h2>
-      <div class="grid-2col" style="margin-top: 1.25rem;">
+      <h2 class="card-title stack-title">tech_stack --print</h2>
+      <div class="grid-2col stack-grid">
         <article class="stat-card tilt-card">
           <p class="card-meta">languages</p>
           <div class="chip-container">
@@ -362,7 +362,7 @@
           </div>
         </article>
 
-        <article class="stat-card tilt-card" style="grid-column: 1 / -1;">
+        <article class="stat-card tilt-card stat-card--full">
           <p class="card-meta">tools_concepts</p>
           <div class="chip-container">
             <span class="chip">Agentic AI</span>
@@ -382,12 +382,12 @@
 
     <!-- Contact Section -->
     <section class="terminal-panel contact-window tilt-card" id="contact">
-      <h2 class="hero-name text-glow" style="font-size: 1.8rem;">$ collaborate --with abdulhayykhan</h2>
-      <p class="hero-bio" style="margin-top: 0.75rem;">
+      <h2 class="hero-name text-glow contact-title">$ collaborate --with abdulhayykhan</h2>
+      <p class="hero-bio contact-bio">
         Interested in AI engineering, backend systems development, or intelligent product collaboration?
         Let&apos;s connect and build something valuable.
       </p>
-      <div class="hero-actions" style="margin-top: 1.25rem;">
+      <div class="hero-actions contact-actions">
         <a href="https://github.com/abdulhayykhan" target="_blank" rel="noopener noreferrer" class="btn-primary">
           github --open
         </a>
