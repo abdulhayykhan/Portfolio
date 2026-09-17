@@ -1,76 +1,90 @@
-# Portfolio
+# Abdul Hayy Khan — Developer Portfolio
 
-Personal portfolio built with Next.js, React 19, and Tailwind CSS v4. Showcases AI, backend, and full-stack projects with dark/light theming, animated cards, and production SEO.
+Personal developer portfolio showcasing 50+ AI engineering, backend, and full-stack projects. Built with zero-dependency **Vanilla HTML5, CSS3, and minimal JavaScript**, styled with a signature cyber-terminal aesthetic, and ready for instant deployment on **GitHub Pages**.
 
-## Tech Stack
+---
 
-- **Next.js** (App Router) · **React 19** · **TypeScript**
-- **Tailwind CSS v4** · **Google Fonts** via `next/font`
+## ⚡ Tech Stack
 
-## Features
+- **HTML5**: Semantic, accessible markup with OpenGraph and Twitter Card social metadata.
+- **CSS3**: Pure custom CSS with custom properties (`var()`), dark/light cyber-terminal theming, scanlines, glow effects, and modern CSS Grid/Flexbox.
+- **Vanilla JavaScript**: Lightweight, dependency-free script (`~5 KB`) handling instant dark/light mode toggling, 3D card perspective tilt, and real-time project searching and category filtering.
+- **Zero Build Step**: No node_modules, bundlers, or compilation required.
 
-- Hero, About, Experience, Projects, Stack, and Contact sections — fully responsive
-- Dark/light theme toggle
-- Animated reveal, hover states, and 3D tilt on pointer devices
-- SEO metadata, Open Graph image, `robots.txt`, `sitemap.xml`
-- Resume download: [`public/Abdul_Hayy_Khan_Resume.pdf`](public/Abdul_Hayy_Khan_Resume.pdf)
+---
 
-## Getting Started
+## ✨ Features
 
+- **Cyber-Terminal Theme**: Dark/light mode with CRT scanlines, neon glowing borders, and retro status bars.
+- **46 Curated Public Projects**: Includes ML models, Agentic AI, FastAPI backends, mobile apps (Kotlin/Flutter), and full-stack platforms.
+- **Real-Time Project Search & Filter**: Instant client-side search by title, description, or technology category (Python, TypeScript, Kotlin, AI/ML, Backend).
+- **Interactive 3D Perspective Tilt**: Fine-pointer desktop card hover effects (automatically disabled for touch devices and users who prefer reduced motion).
+- **Direct Resume Download**: [`Abdul_Hayy_Khan_Resume.pdf`](Abdul_Hayy_Khan_Resume.pdf) downloadable directly.
+- **GitHub Pages Ready**: Native `.nojekyll` configuration and GitHub Actions automated deployment workflow.
+
+---
+
+## 🚀 Local Preview
+
+You can run the portfolio locally using any static web server:
+
+### Using Python:
 ```bash
-npm install
-npm run dev
+python -m http.server 8000
 ```
+Then open [http://localhost:8000](http://localhost:8000).
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Scripts
-
-| Command | Description |
-|---|---|
-| `npm run dev` | Development server |
-| `npm run build` | Production build |
-| `npm run start` | Start production build |
-| `npm run lint` | Lint check |
-
-## Environment Variables
-
-No config required to run locally. For deployment:
-
+### Or using Node.js / NPX:
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+npx serve .
 ```
 
-Falls back to Vercel deployment URL in production, `http://localhost:3000` locally.
+### Or using VS Code Live Server:
+Right-click `index.html` and click **"Open with Live Server"**.
 
-## Deployment
+---
 
-Deploy to Vercel:
+## 🌐 Deployment to GitHub Pages
 
-1. Push to GitHub
-2. Import in Vercel
-3. Set `NEXT_PUBLIC_SITE_URL` for canonical and social URLs
-4. Deploy with default Next.js settings
+This portfolio is configured to deploy directly to GitHub Pages:
 
-## Project Structure
+### Method 1: Deploy from Branch (Recommended & Instant)
+1. Push this repository to GitHub:
+   ```bash
+   git add .
+   git commit -m "Deploy vanilla portfolio to GitHub Pages"
+   git push origin main
+   ```
+2. Go to your repository on GitHub:
+   **Settings → Pages**
+3. Under **Build and deployment → Source**, select **"Deploy from a branch"**.
+4. Under **Branch**, select **`main`** and folder **`/ (root)`**, then click **Save**.
+5. Your site will be live at `https://abdulhayykhan.github.io/Portfolio/` in under a minute!
+
+### Method 2: GitHub Actions (Automated)
+A pre-configured GitHub Actions workflow is located at [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Under **Settings → Pages → Source**, select **"GitHub Actions"** to have GitHub automatically publish on every push to `main`.
+
+---
+
+## 📂 Project Structure
+
 ```
-app/
-├── page.tsx                    # Landing page, theme state
-├── components/
-│   └── portfolio-sections.tsx  # All portfolio sections
-├── lib/
-│   ├── portfolio-data.ts       # Projects, stats, resume path
-│   └── site-config.ts          # Site metadata and URL helper
-├── opengraph-image.tsx         # Social preview image
-├── robots.ts                   # Robots metadata route
-└── sitemap.ts                  # Sitemap route
-public/                         # Static assets, resume PDF, favicon
+Portfolio/
+├── index.html                   # Main page: semantic layout, metadata, all 46 projects
+├── css/
+│   └── style.css                # Terminal styling, themes, animations, responsive grid
+├── js/
+│   └── main.js                  # Theme switcher, 3D pointer tilt, live search/filter
+├── Abdul_Hayy_Khan_Resume.pdf   # Direct CV download
+├── icon.svg & favicon.ico       # Site icons
+├── .nojekyll                    # Disables Jekyll processing on GitHub Pages
+└── .github/workflows/deploy.yml # GitHub Actions Pages deployment workflow
 ```
+
+---
 
 ## 📄 License
 
-This project is open-source and available for educational and commercial use under the MIT License.
-
----
+Open-source and available under the [MIT License](LICENSE).
 
 **Made with ❤️ by [Abdul Hayy Khan](https://www.linkedin.com/in/abdulhayykhan/)**

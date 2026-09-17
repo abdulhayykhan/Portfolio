@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul Hayy Khan | AI Engineer &amp; Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Abdul Hayy Khan, BS Artificial Intelligence student at DUET, specializing in AI engineering, backend systems, and full-stack software development.">
+  <meta name="author" content="Abdul Hayy Khan">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdul Hayy Khan | AI Engineer &amp; Full-Stack Developer">
+  <meta property="og:description" content="Portfolio of Abdul Hayy Khan featuring 50+ AI engineering, backend, mobile, and full-stack projects.">
+  <meta property="og:site_name" content="Abdul Hayy Khan">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abdul Hayy Khan | AI Engineer &amp; Full-Stack Developer">
+  <meta name="twitter:description" content="Portfolio of Abdul Hayy Khan featuring 50+ AI engineering, backend, mobile, and full-stack projects.">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="alternate icon" href="./favicon.ico">
+  <link rel="apple-touch-icon" href="./icon.svg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Instant Pre-Hydration Theme Script (Prevents FOUC) -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("portfolio-theme");
+        var theme = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- Background Layers -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-radial" aria-hidden="true"></div>
+  <div class="crt-scanlines" aria-hidden="true"></div>
+
+  <div class="container">
+    <!-- Terminal Sticky Navigation -->
+    <nav class="nav-panel" id="navbar" aria-label="Main Navigation">
+      <div class="nav-brand" style="display: flex; align-items: center; gap: 0.55rem;">
+        <img src="./icon.svg" alt="AHK Logo" width="24" height="24" style="border-radius: 6px; box-shadow: 0 0 8px rgba(120, 255, 107, 0.4);">
+        <span>terminal://abdulhayykhan</span>
+      </div>
+      <div class="nav-links">
+        <a href="#about" class="nav-btn">about</a>
+        <a href="#highlights" class="nav-btn">highlights</a>
+        <a href="#projects" class="nav-btn">projects</a>
+        <a href="#stack" class="nav-btn">stack</a>
+        <a href="#contact" class="nav-btn">contact</a>
+        <button type="button" class="nav-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch theme">
+          <span id="theme-icon" aria-hidden="true">☀</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Terminal Window -->
+    <header class="terminal-panel hero-window tilt-card" id="hero">
+      <div class="terminal-titlebar">
+        <div class="window-dots" aria-hidden="true">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-prompt-path">abdulhayykhan@portfolio:~</span>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">DUET&apos;28 // BS ARTIFICIAL INTELLIGENCE</p>
+        <h1 class="hero-name text-glow">Abdul Hayy Khan</h1>
+        <p class="hero-bio">
+          <span class="prompt-char">$</span>
+          Building production-ready AI systems, backend tools, and practical full-stack products.
+          Passionate about machine learning, agentic workflows, NLP, and architecture that scales.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card tilt-card">
+            <p class="stat-label">Public Repositories</p>
+            <p class="stat-value">50+</p>
+          </div>
+          <div class="stat-card tilt-card">
+            <p class="stat-label">Engineering Focus</p>
+            <p class="stat-value">AI Systems · Backend · Full-Stack</p>
+          </div>
+          <div class="stat-card tilt-card">
+            <p class="stat-label">Primary Domain</p>
+            <p class="stat-value">Artificial Intelligence</p>
+          </div>
+        </div>
+
+        <!-- Action Links -->
+        <div class="hero-actions">
+          <a href="https://github.com/abdulhayykhan" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            git clone profile
+          </a>
+          <a href="https://www.linkedin.com/in/abdulhayykhan/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            open linkedin
+          </a>
+          <a href="https://kaggle.com/abdulhayykhan" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            open kaggle
+          </a>
+          <a href="mailto:abdulhayykhan.1@gmail.com" class="btn-outline">
+            send email
+          </a>
+          <a href="./Abdul_Hayy_Khan_Resume.pdf" download class="btn-outline">
+            download cv
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="grid-2col" id="about">
+      <article class="terminal-panel section-card tilt-card">
+        <p class="card-meta">~/about/profile.md</p>
+        <h2 class="card-title">about_me()</h2>
+        <p class="card-body">
+          I&apos;m a BS Artificial Intelligence student at Dawood University of Engineering &amp; Technology (DUET), Karachi,
+          and a developer focused on backend engineering and intelligent systems. I build full-stack tools and agentic workflows
+          that solve real-world problems with practical, measurable impact.
+        </p>
+        <p class="card-body">
+          Through internships at DevelopersHub and CodeAlpha, I&apos;ve built scalable systems from real-time collaboration
+          platforms to automated security vaults, with hands-on experience in testing, deployment, and secure system design.
+        </p>
+      </article>
+
+      <article class="terminal-panel section-card tilt-card">
+        <p class="card-meta">~/focus/areas.json</p>
+        <h2 class="card-title">focus_areas[]</h2>
+        <ul class="card-list">
+          <li>&gt; <strong>Machine Learning &amp; AI:</strong> Content scoring, RAG architectures, and NLP pipelines.</li>
+          <li>&gt; <strong>Agentic Systems:</strong> Multi-agent coordination with Google ADK and tool-calling assistants.</li>
+          <li>&gt; <strong>Backend Engineering:</strong> High-performance FastAPI, Flask, WebSockets, and PostgreSQL.</li>
+          <li>&gt; <strong>Mobile &amp; Web:</strong> Kotlin &amp; Jetpack Compose, Flutter, Next.js, and offline-first apps.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Highlights Section: Experience, Spotlight, Language Distribution -->
+    <section class="grid-3col" id="highlights">
+      <article class="terminal-panel section-card tilt-card">
+        <p class="card-meta">~/experience/internships.log</p>
+        <h3 class="card-title">experience[]</h3>
+        <ul class="card-list">
+          <li>&gt; <strong>DevelopersHub</strong> — Software Dev Intern (Jul 2025 - Sept 2025): FastAPI, PostgreSQL, JWT auth, WebSockets.</li>
+          <li>&gt; <strong>CodeAlpha</strong> — Python Intern (Jul 2025 - Aug 2025): Automation, chatbot, and algorithmic tools.</li>
+        </ul>
+      </article>
+
+      <article class="terminal-panel section-card tilt-card">
+        <p class="card-meta">spotlight://flyrank-ai</p>
+        <h3 class="card-title">ML &amp; Search Intelligence</h3>
+        <p class="card-body">
+          <strong>FlyRank-AI</strong>: Machine Learning Engineering Capstone achieving
+          <strong>Precision@50: 0.740 vs 0.340 baseline</strong> for content opportunity scoring using Random Forest and precision ranking.
+        </p>
+      </article>
+
+      <article class="terminal-panel section-card tilt-card">
+        <p class="card-meta">language_distribution.json</p>
+        <h3 class="card-title">languages[]</h3>
+        <div class="chip-container">
+          <span class="chip">Python: 24</span>
+          <span class="chip">TypeScript: 8</span>
+          <span class="chip">Kotlin: 3</span>
+          <span class="chip">Java: 3</span>
+          <span class="chip">JavaScript: 2</span>
+          <span class="chip">C++: 1</span>
+          <span class="chip">SQL: 1</span>
+          <span class="chip">Dart: 1</span>
+          <span class="chip">HTML: 1</span>
+          <span class="chip">Shell: 1</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- Projects Section with Live Search & Filtering -->
+    <section class="terminal-panel section-card" id="projects">
+      <div class="projects-header-wrapper">
+        <div class="projects-top-bar">
+          <h2 class="projects-title">all_projects --source github --count 46</h2>
+          <span class="projects-count-badge" id="project-count-badge">showing: 46 / 46 repos</span>
+        </div>
+
+        <div class="filter-controls">
+          <div class="search-input-wrapper">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="text"
+              id="project-search"
+              class="search-input"
+              placeholder="Search by title, technology, or keywords..."
+              aria-label="Search projects"
+            >
+          </div>
+
+          <div class="filter-tags" role="group" aria-label="Filter projects by technology">
+            <button type="button" class="filter-btn active" data-filter="all">all</button>
+            <button type="button" class="filter-btn" data-filter="python">python</button>
+            <button type="button" class="filter-btn" data-filter="typescript">typescript</button>
+            <button type="button" class="filter-btn" data-filter="kotlin">kotlin</button>
+            <button type="button" class="filter-btn" data-filter="ai">ai / ml</button>
+            <button type="button" class="filter-btn" data-filter="backend">backend</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 46 Project Cards Grid -->
+      <div class="grid-3col" id="projects-grid" style="margin-top: 1.5rem;">
+
+        <!-- 1: FlyRank-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="FlyRank-AI" data-lang="python" data-tags="ai ml random-forest search-intelligence capstone" data-desc="FlyRank ML Engineering Internship capstone — Machine Learning content opportunity scoring with Random Forest and Precision@K evaluation.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#01 repo://flyrank-ai</span>
+            <h3 class="project-card-title">FlyRank-AI</h3>
+          </div>
+          <p class="project-card-desc">FlyRank ML Engineering Internship capstone — Machine Learning content opportunity scoring with Random Forest and Precision@K evaluation.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/FlyRank-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 2: QATRA-Web-App -->
+        <article class="terminal-panel project-card tilt-card" data-title="QATRA-Web-App" data-lang="javascript" data-tags="fastapi pwa leaflet healthcare full-stack backend" data-desc="Emergency blood response platform connecting verified seekers to eligible donors across Pakistan in real time. Built with FastAPI, Leaflet, and Vanilla PWA.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#02 repo://qatra-web-app</span>
+            <h3 class="project-card-title">QATRA-Web-App</h3>
+          </div>
+          <p class="project-card-desc">Emergency blood response platform connecting verified seekers to eligible donors across Pakistan in real time. Built with FastAPI, Leaflet, and Vanilla PWA.</p>
+          <div class="project-card-footer">
+            <span class="chip">JavaScript</span>
+            <a href="https://github.com/abdulhayykhan/QATRA-Web-App" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 3: ResumRank-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="ResumRank-AI" data-lang="python" data-tags="ai ml nlp spacy hiring" data-desc="spaCy NLP resume ranker matching candidates to job requirements, performing skill-gap analysis, and computing semantic fit scores.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#03 repo://resumrank-ai</span>
+            <h3 class="project-card-title">ResumRank-AI</h3>
+          </div>
+          <p class="project-card-desc">spaCy NLP resume ranker matching candidates to job requirements, performing skill-gap analysis, and computing semantic fit scores.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/ResumRank-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 4: K-HeatPulse -->
+        <article class="terminal-panel project-card tilt-card" data-title="K-HeatPulse" data-lang="python" data-tags="ai ml dl streamlit weather heatwave" data-desc="Streamlit dashboard comparing ML and DL models to predict Karachi's real-time heatwave risk using live meteorological telemetry.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#04 repo://k-heatpulse</span>
+            <h3 class="project-card-title">K-HeatPulse</h3>
+          </div>
+          <p class="project-card-desc">Streamlit dashboard comparing ML and DL models to predict Karachi's real-time heatwave risk using live meteorological telemetry.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/K-HeatPulse" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 5: ShikayatAI -->
+        <article class="terminal-panel project-card tilt-card" data-title="ShikayatAI" data-lang="python" data-tags="ai agentic google-adk multi-agent civic" data-desc="Multi-agent civic resolution platform built with Google ADK to analyze, triage, and route citizen urban complaints in Karachi.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#05 repo://shikayatai</span>
+            <h3 class="project-card-title">ShikayatAI</h3>
+          </div>
+          <p class="project-card-desc">Multi-agent civic resolution platform built with Google ADK to analyze, triage, and route citizen urban complaints in Karachi.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/ShikayatAI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 6: TechNova26 -->
+        <article class="terminal-panel project-card tilt-card" data-title="TechNova26" data-lang="python" data-tags="ai agentic simulator autonomous benchmark" data-desc="Autonomous AI agent (BinaryKnight) and benchmark simulation environment built for TechNova '26 Agentic AI: The Trust Arena.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#06 repo://technova26</span>
+            <h3 class="project-card-title">TechNova26</h3>
+          </div>
+          <p class="project-card-desc">Autonomous AI agent (BinaryKnight) and benchmark simulation environment built for TechNova '26 Agentic AI: The Trust Arena.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/TechNova26" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 7: AsaanBill-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="AsaanBill-AI" data-lang="python" data-tags="ai gemini tool-calling auditor utilities" data-desc="Gemini 2.5 Flash-powered utility bill auditor with agentic tool calling to extract line items, verify math, and summarize Pakistani bills.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#07 repo://asaanbill-ai</span>
+            <h3 class="project-card-title">AsaanBill-AI</h3>
+          </div>
+          <p class="project-card-desc">Gemini 2.5 Flash-powered utility bill auditor with agentic tool calling to extract line items, verify math, and summarize Pakistani bills.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/AsaanBill-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 8: VectorVault-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="VectorVault-AI" data-lang="python" data-tags="ai rag chromadb embeddings fastapi search backend" data-desc="Local-first semantic PDF search engine using FastAPI, ChromaDB, and Sentence-Transformers neural embeddings.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#08 repo://vectorvault-ai</span>
+            <h3 class="project-card-title">VectorVault-AI</h3>
+          </div>
+          <p class="project-card-desc">Local-first semantic PDF search engine using FastAPI, ChromaDB, and Sentence-Transformers neural embeddings.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/VectorVault-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 9: PriceDrift -->
+        <article class="terminal-panel project-card tilt-card" data-title="PriceDrift" data-lang="python" data-tags="ai ml numpy regression from-scratch" data-desc="Dual-model housing analytics implementing Linear and Logistic Regression from scratch in NumPy with interactive in-browser inference.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#09 repo://pricedrift</span>
+            <h3 class="project-card-title">PriceDrift</h3>
+          </div>
+          <p class="project-card-desc">Dual-model housing analytics implementing Linear and Logistic Regression from scratch in NumPy with interactive in-browser inference.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/PriceDrift" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 10: Kifayat-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="Kifayat-AI" data-lang="python" data-tags="ai inflation analytics kitchen budget" data-desc="Karachi kitchen-budget price intelligence companion predicting staple commodity price shifts in Roman Urdu using PBS weekly data.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#10 repo://kifayat-ai</span>
+            <h3 class="project-card-title">Kifayat-AI</h3>
+          </div>
+          <p class="project-card-desc">Karachi kitchen-budget price intelligence companion predicting staple commodity price shifts in Roman Urdu using PBS weekly data.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Kifayat-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 11: Jhoot-Detector -->
+        <article class="terminal-panel project-card tilt-card" data-title="Jhoot-Detector" data-lang="python" data-tags="ai scam-detector nlp hiring" data-desc="AI scam detector for Pakistani job postings that analyzes ad text and highlights deceptive hiring red flags. Built for GDG Live Pakistan.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#11 repo://jhoot-detector</span>
+            <h3 class="project-card-title">Jhoot-Detector</h3>
+          </div>
+          <p class="project-card-desc">AI scam detector for Pakistani job postings that analyzes ad text and highlights deceptive hiring red flags. Built for GDG Live Pakistan.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Jhoot-Detector" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 12: Ustaad-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="Ustaad-AI" data-lang="python" data-tags="ai fastapi flet assistant mobile" data-desc="FastAPI and Flet-powered AI service orchestrator and interactive mobile assistant built for the AI Seekho 2026 AntiGravity Hackathon.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#12 repo://ustaad-ai</span>
+            <h3 class="project-card-title">Ustaad-AI</h3>
+          </div>
+          <p class="project-card-desc">FastAPI and Flet-powered AI service orchestrator and interactive mobile assistant built for the AI Seekho 2026 AntiGravity Hackathon.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Ustaad-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 13: ViralVantage-AI -->
+        <article class="terminal-panel project-card tilt-card" data-title="ViralVantage-AI" data-lang="typescript" data-tags="ai nextjs fastapi gemini video-analytics full-stack" data-desc="Short-form video analytics and hook optimization engine built with Next.js, FastAPI, and Gemini multimodal AI.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#13 repo://viralvantage-ai</span>
+            <h3 class="project-card-title">ViralVantage-AI</h3>
+          </div>
+          <p class="project-card-desc">Short-form video analytics and hook optimization engine built with Next.js, FastAPI, and Gemini multimodal AI.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/ViralVantage-AI" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 14: CipherGram2.0 -->
+        <article class="terminal-panel project-card tilt-card" data-title="CipherGram2.0" data-lang="kotlin" data-tags="kotlin android e2ee encryption mobile security" data-desc="E2EE-encrypted, chat-focused Instagram Android client with native media previews, cryptographic key management, and OS share-sheet integration.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#14 repo://ciphergram2.0</span>
+            <h3 class="project-card-title">CipherGram2.0</h3>
+          </div>
+          <p class="project-card-desc">E2EE-encrypted, chat-focused Instagram Android client with native media previews, cryptographic key management, and OS share-sheet integration.</p>
+          <div class="project-card-footer">
+            <span class="chip">Kotlin</span>
+            <a href="https://github.com/abdulhayykhan/CipherGram2.0" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 15: CrimsonCare -->
+        <article class="terminal-panel project-card tilt-card" data-title="CrimsonCare" data-lang="kotlin" data-tags="kotlin android compose room offline-first mobile" data-desc="Offline-first, strictly private Android health tracker built with Kotlin, Jetpack Compose, and encrypted local Room database.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#15 repo://crimsoncare</span>
+            <h3 class="project-card-title">CrimsonCare</h3>
+          </div>
+          <p class="project-card-desc">Offline-first, strictly private Android health tracker built with Kotlin, Jetpack Compose, and encrypted local Room database.</p>
+          <div class="project-card-footer">
+            <span class="chip">Kotlin</span>
+            <a href="https://github.com/abdulhayykhan/CrimsonCare" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 16: DukaanSync -->
+        <article class="terminal-panel project-card tilt-card" data-title="DukaanSync" data-lang="typescript" data-tags="typescript nextjs firebase pos telemetry full-stack" data-desc="Real-time multi-shop POS, inventory synchronization, and telemetry analytics platform built with Next.js 14, TypeScript, and Firebase.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#16 repo://dukaansync</span>
+            <h3 class="project-card-title">DukaanSync</h3>
+          </div>
+          <p class="project-card-desc">Real-time multi-shop POS, inventory synchronization, and telemetry analytics platform built with Next.js 14, TypeScript, and Firebase.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/DukaanSync" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 17: TunePulse -->
+        <article class="terminal-panel project-card tilt-card" data-title="TunePulse" data-lang="typescript" data-tags="typescript nextjs recharts spotify analytics" data-desc="Spotify listening analytics dashboard featuring top tracks, genre heatmaps, and shareable personality cards via Next.js 16 and Recharts.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#17 repo://tunepulse</span>
+            <h3 class="project-card-title">TunePulse</h3>
+          </div>
+          <p class="project-card-desc">Spotify listening analytics dashboard featuring top tracks, genre heatmaps, and shareable personality cards via Next.js 16 and Recharts.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/TunePulse" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 18: GoalOracle -->
+        <article class="terminal-panel project-card tilt-card" data-title="GoalOracle" data-lang="python" data-tags="python ai ml elo monte-carlo simulation" data-desc="FIFA World Cup 2026 prediction engine powered by dynamic Elo ratings, Poisson distributions, and Monte Carlo simulations.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#18 repo://goaloracle</span>
+            <h3 class="project-card-title">GoalOracle</h3>
+          </div>
+          <p class="project-card-desc">FIFA World Cup 2026 prediction engine powered by dynamic Elo ratings, Poisson distributions, and Monte Carlo simulations.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/GoalOracle" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 19: Multiverse-Archive -->
+        <article class="terminal-panel project-card tilt-card" data-title="Multiverse-Archive" data-lang="python" data-tags="python ai semantic-search embeddings marvel" data-desc="Marvel Universe exploration platform with AI-powered semantic search and personal character vault storage.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#19 repo://multiverse-archive</span>
+            <h3 class="project-card-title">Multiverse-Archive</h3>
+          </div>
+          <p class="project-card-desc">Marvel Universe exploration platform with AI-powered semantic search and personal character vault storage.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Multiverse-Archive" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 20: Proxion26 -->
+        <article class="terminal-panel project-card tilt-card" data-title="Proxion26" data-lang="sql" data-tags="sql mysql queries ctes window-functions" data-desc="25 high-performance MySQL 8.0 queries for Proxion '26 Query Quest — CTEs, window functions, and complex aggregations. 1st Place, Software Module.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#20 repo://proxion26</span>
+            <h3 class="project-card-title">Proxion26</h3>
+          </div>
+          <p class="project-card-desc">25 high-performance MySQL 8.0 queries for Proxion '26 Query Quest — CTEs, window functions, and complex aggregations. 1st Place, Software Module.</p>
+          <div class="project-card-footer">
+            <span class="chip">SQL</span>
+            <a href="https://github.com/abdulhayykhan/Proxion26" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 21: PinkVault -->
+        <article class="terminal-panel project-card tilt-card" data-title="PinkVault" data-lang="python" data-tags="python fastapi websockets e2ee chat backend" data-desc="Secure real-time end-to-end encrypted chat application built with FastAPI, WebSockets, and client-side cryptographic key handling.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#21 repo://pinkvault</span>
+            <h3 class="project-card-title">PinkVault</h3>
+          </div>
+          <p class="project-card-desc">Secure real-time end-to-end encrypted chat application built with FastAPI, WebSockets, and client-side cryptographic key handling.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/PinkVault" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 22: DonkeyType -->
+        <article class="terminal-panel project-card tilt-card" data-title="DonkeyType" data-lang="typescript" data-tags="typescript react tailwind typing speed-test" data-desc="Minimalist, high-fidelity typing test clone with custom sound profiles, interactive performance graphs, and focus mode built in React and Tailwind.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#22 repo://donkeytype</span>
+            <h3 class="project-card-title">DonkeyType</h3>
+          </div>
+          <p class="project-card-desc">Minimalist, high-fidelity typing test clone with custom sound profiles, interactive performance graphs, and focus mode built in React and Tailwind.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/DonkeyType" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 23: ND-QuickReceipt -->
+        <article class="terminal-panel project-card tilt-card" data-title="ND-QuickReceipt" data-lang="kotlin" data-tags="kotlin android compose bluetooth thermal-printing" data-desc="Offline-first Android application built with Kotlin and Jetpack Compose for ESC/POS Bluetooth thermal printing (58mm/80mm) with Room logging.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#23 repo://nd-quickreceipt</span>
+            <h3 class="project-card-title">ND-QuickReceipt</h3>
+          </div>
+          <p class="project-card-desc">Offline-first Android application built with Kotlin and Jetpack Compose for ESC/POS Bluetooth thermal printing (58mm/80mm) with Room logging.</p>
+          <div class="project-card-footer">
+            <span class="chip">Kotlin</span>
+            <a href="https://github.com/abdulhayykhan/ND-QuickReceipt" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 24: QATRA-Mob-App -->
+        <article class="terminal-panel project-card tilt-card" data-title="QATRA-Mob-App" data-lang="dart" data-tags="dart flutter mobile blood-donation healthcare" data-desc="Cross-platform mobile application for the QATRA emergency blood donation network built with Flutter and Dart.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#24 repo://qatra-mob-app</span>
+            <h3 class="project-card-title">QATRA-Mob-App</h3>
+          </div>
+          <p class="project-card-desc">Cross-platform mobile application for the QATRA emergency blood donation network built with Flutter and Dart.</p>
+          <div class="project-card-footer">
+            <span class="chip">Dart</span>
+            <a href="https://github.com/abdulhayykhan/QATRA-Mob-App" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 25: marvel-universe-digest -->
+        <article class="terminal-panel project-card tilt-card" data-title="marvel-universe-digest" data-lang="typescript" data-tags="typescript react neobrutalism encyclopedia" data-desc="Neobrutalist Marvel character encyclopedia featuring 40 heroes and villains, MCU timeline appearances, and head-to-head comparison tool.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#25 repo://marvel-universe-digest</span>
+            <h3 class="project-card-title">marvel-universe-digest</h3>
+          </div>
+          <p class="project-card-desc">Neobrutalist Marvel character encyclopedia featuring 40 heroes and villains, MCU timeline appearances, and head-to-head comparison tool.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/marvel-universe-digest" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 26: Marvel-Roster-Browser -->
+        <article class="terminal-panel project-card tilt-card" data-title="Marvel-Roster-Browser" data-lang="typescript" data-tags="typescript react mcoc roster" data-desc="Full-stack TypeScript application for tracking, tier-sorting, and filtering Marvel Contest of Champions rosters.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#26 repo://marvel-roster-browser</span>
+            <h3 class="project-card-title">Marvel-Roster-Browser</h3>
+          </div>
+          <p class="project-card-desc">Full-stack TypeScript application for tracking, tier-sorting, and filtering Marvel Contest of Champions rosters.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/Marvel-Roster-Browser" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 27: Smart-Ride-Hailing-Data-Analyzer -->
+        <article class="terminal-panel project-card tilt-card" data-title="Smart-Ride-Hailing-Data-Analyzer" data-lang="python" data-tags="python data-science pandas analytics ride-hailing" data-desc="Python data science project uncovering actionable insights, driver distributions, and peak surge trends from ride-hailing datasets.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#27 repo://smart-ride-hailing-data-analyzer</span>
+            <h3 class="project-card-title">Smart-Ride-Hailing</h3>
+          </div>
+          <p class="project-card-desc">Python data science project uncovering actionable insights, driver distributions, and peak surge trends from ride-hailing datasets.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Smart-Ride-Hailing-Data-Analyzer" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 28: ByteShift -->
+        <article class="terminal-panel project-card tilt-card" data-title="ByteShift" data-lang="python" data-tags="python fastapi file-converter railway backend" data-desc="FastAPI-based multi-format file converter supporting image, document, audio, and video transformations with a responsive single-page UI.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#28 repo://byteshift</span>
+            <h3 class="project-card-title">ByteShift</h3>
+          </div>
+          <p class="project-card-desc">FastAPI-based multi-format file converter supporting image, document, audio, and video transformations with a responsive single-page UI.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/ByteShift" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 29: forage-midas -->
+        <article class="terminal-panel project-card tilt-card" data-title="forage-midas" data-lang="java" data-tags="java spring-boot kafka jpmc finance backend" data-desc="Spring Boot and Apache Kafka backend transaction processor developed for the JPMC Midas Core financial services architecture.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#29 repo://forage-midas</span>
+            <h3 class="project-card-title">forage-midas</h3>
+          </div>
+          <p class="project-card-desc">Spring Boot and Apache Kafka backend transaction processor developed for the JPMC Midas Core financial services architecture.</p>
+          <div class="project-card-footer">
+            <span class="chip">Java</span>
+            <a href="https://github.com/abdulhayykhan/forage-midas" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 30: SLAMS -->
+        <article class="terminal-panel project-card tilt-card" data-title="SLAMS" data-lang="javascript" data-tags="javascript academic rbac full-stack management" data-desc="Full-stack student life and academic platform for attendance tracking, course enrollments, note sharing, and role-based access control.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#30 repo://slams</span>
+            <h3 class="project-card-title">SLAMS</h3>
+          </div>
+          <p class="project-card-desc">Full-stack student life and academic platform for attendance tracking, course enrollments, note sharing, and role-based access control.</p>
+          <div class="project-card-footer">
+            <span class="chip">JavaScript</span>
+            <a href="https://github.com/abdulhayykhan/SLAMS" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 31: Thermal-Printer-App -->
+        <article class="terminal-panel project-card tilt-card" data-title="Thermal-Printer-App" data-lang="shell" data-tags="shell android esc-pos hardware printer" data-desc="Shell and Android utility application for managing and operating ESC/POS thermal printer hardware interfaces.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#31 repo://thermal-printer-app</span>
+            <h3 class="project-card-title">Thermal-Printer-App</h3>
+          </div>
+          <p class="project-card-desc">Shell and Android utility application for managing and operating ESC/POS thermal printer hardware interfaces.</p>
+          <div class="project-card-footer">
+            <span class="chip">Shell</span>
+            <a href="https://github.com/abdulhayykhan/Thermal-Printer-App" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 32: SFTSS -->
+        <article class="terminal-panel project-card tilt-card" data-title="SFTSS" data-lang="python" data-tags="python security cli rsa xor cryptography" data-desc="Python CLI tool for secure file transfers utilizing hybrid XOR and RSA encryption with SHA-256 tamper-proof verification.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#32 repo://sftss</span>
+            <h3 class="project-card-title">SFTSS</h3>
+          </div>
+          <p class="project-card-desc">Python CLI tool for secure file transfers utilizing hybrid XOR and RSA encryption with SHA-256 tamper-proof verification.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/SFTSS" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 33: secure-vault -->
+        <article class="terminal-panel project-card tilt-card" data-title="secure-vault" data-lang="python" data-tags="python streamlit security ufw firewall malware-detection" data-desc="Streamlit defense vault with automated UFW firewall blocking, file encryption, audit forensics, and signature-based malware detection.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#33 repo://secure-vault</span>
+            <h3 class="project-card-title">secure-vault</h3>
+          </div>
+          <p class="project-card-desc">Streamlit defense vault with automated UFW firewall blocking, file encryption, audit forensics, and signature-based malware detection.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/secure-vault" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 34: Encrypted-Notes-App -->
+        <article class="terminal-panel project-card tilt-card" data-title="Encrypted-Notes-App" data-lang="python" data-tags="python tkinter security fernet desktop" data-desc="Python desktop application featuring Fernet symmetric encryption, password hashing, and encrypted local note storage via Tkinter.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#34 repo://encrypted-notes-app</span>
+            <h3 class="project-card-title">Encrypted-Notes-App</h3>
+          </div>
+          <p class="project-card-desc">Python desktop application featuring Fernet symmetric encryption, password hashing, and encrypted local note storage via Tkinter.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Encrypted-Notes-App" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 35: Streamlit-Apps -->
+        <article class="terminal-panel project-card tilt-card" data-title="Streamlit-Apps" data-lang="python" data-tags="python streamlit api translation web-apps" data-desc="Collection of interactive Python Streamlit web applications with external REST API integrations and real-time translation tools.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#35 repo://streamlit-apps</span>
+            <h3 class="project-card-title">Streamlit-Apps</h3>
+          </div>
+          <p class="project-card-desc">Collection of interactive Python Streamlit web applications with external REST API integrations and real-time translation tools.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Streamlit-Apps" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 36: Enhanced-Task-Management-System -->
+        <article class="terminal-panel project-card tilt-card" data-title="Enhanced-Task-Management-System" data-lang="python" data-tags="python fastapi sqlalchemy jinja2 backend" data-desc="FastAPI and SQLAlchemy task manager with Jinja2 rendering, Pydantic data validation, and automated unit testing.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#36 repo://enhanced-task-management</span>
+            <h3 class="project-card-title">Enhanced-Task-Manager</h3>
+          </div>
+          <p class="project-card-desc">FastAPI and SQLAlchemy task manager with Jinja2 rendering, Pydantic data validation, and automated unit testing.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Enhanced-Task-Management-System" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 37: Task-Management-System -->
+        <article class="terminal-panel project-card tilt-card" data-title="Task-Management-System" data-lang="python" data-tags="python flask sqlite jinja2 backend" data-desc="Flask task management system utilizing SQLAlchemy, SQLite, Jinja2 templating, and RESTful service architecture.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#37 repo://task-management-system</span>
+            <h3 class="project-card-title">Task-Management-System</h3>
+          </div>
+          <p class="project-card-desc">Flask task management system utilizing SQLAlchemy, SQLite, Jinja2 templating, and RESTful service architecture.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Task-Management-System" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 38: naeem-doc -->
+        <article class="terminal-panel project-card tilt-card" data-title="naeem-doc" data-lang="typescript" data-tags="typescript react tailwind business" data-desc="Modern responsive business website for Naeem Documentation built with React, TypeScript, and Tailwind CSS.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#38 repo://naeem-doc</span>
+            <h3 class="project-card-title">naeem-doc</h3>
+          </div>
+          <p class="project-card-desc">Modern responsive business website for Naeem Documentation built with React, TypeScript, and Tailwind CSS.</p>
+          <div class="project-card-footer">
+            <span class="chip">TypeScript</span>
+            <a href="https://github.com/abdulhayykhan/naeem-doc" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 39: Naeem-Documentation -->
+        <article class="terminal-panel project-card tilt-card" data-title="Naeem-Documentation" data-lang="html" data-tags="html css tailwind whatsapp business" data-desc="Mobile-first website for Karachi document consultancy featuring interactive service menus and direct WhatsApp quote routing.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#39 repo://naeem-documentation</span>
+            <h3 class="project-card-title">Naeem-Documentation</h3>
+          </div>
+          <p class="project-card-desc">Mobile-first website for Karachi document consultancy featuring interactive service menus and direct WhatsApp quote routing.</p>
+          <div class="project-card-footer">
+            <span class="chip">HTML</span>
+            <a href="https://github.com/abdulhayykhan/Naeem-Documentation" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 40: CodeAlpha -->
+        <article class="terminal-panel project-card tilt-card" data-title="CodeAlpha" data-lang="python" data-tags="python automation chatbot games internship" data-desc="Python automation, chatbot, stock tracker, and interactive utility applications developed during the CodeAlpha software internship.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#40 repo://codealpha</span>
+            <h3 class="project-card-title">CodeAlpha</h3>
+          </div>
+          <p class="project-card-desc">Python automation, chatbot, stock tracker, and interactive utility applications developed during the CodeAlpha software internship.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/CodeAlpha" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 41: PIAIC -->
+        <article class="terminal-panel project-card tilt-card" data-title="PIAIC" data-lang="python" data-tags="python ai assignments algorithms" data-desc="Comprehensive repository of AI assignments, data structures, and algorithmic challenges for the Presidential Initiative for AI & Computing.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#41 repo://piaic</span>
+            <h3 class="project-card-title">PIAIC</h3>
+          </div>
+          <p class="project-card-desc">Comprehensive repository of AI assignments, data structures, and algorithmic challenges for the Presidential Initiative for AI & Computing.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/PIAIC" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 42: Machine-Learning -->
+        <article class="terminal-panel project-card tilt-card" data-title="Machine-Learning" data-lang="python" data-tags="python ai ml jupyter algorithms" data-desc="Curated collection of core machine learning algorithms, statistical modeling workflows, and exploratory Jupyter notebooks.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#42 repo://machine-learning</span>
+            <h3 class="project-card-title">Machine-Learning</h3>
+          </div>
+          <p class="project-card-desc">Curated collection of core machine learning algorithms, statistical modeling workflows, and exploratory Jupyter notebooks.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Machine-Learning" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 43: Flappy-Bird-Clone -->
+        <article class="terminal-panel project-card tilt-card" data-title="Flappy-Bird-Clone" data-lang="java" data-tags="java swing gui game 2d" data-desc="Java Swing arcade game demonstrating object-oriented game loops, collision detection, and 2D canvas rendering.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#43 repo://flappy-bird-clone</span>
+            <h3 class="project-card-title">Flappy-Bird-Clone</h3>
+          </div>
+          <p class="project-card-desc">Java Swing arcade game demonstrating object-oriented game loops, collision detection, and 2D canvas rendering.</p>
+          <div class="project-card-footer">
+            <span class="chip">Java</span>
+            <a href="https://github.com/abdulhayykhan/Flappy-Bird-Clone" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 44: OOP-Projects -->
+        <article class="terminal-panel project-card tilt-card" data-title="OOP-Projects" data-lang="java" data-tags="java cpp python oop design-patterns" data-desc="Object-oriented programming implementations in Java, C++, and Python highlighting design patterns, inheritance, and polymorphism.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#44 repo://oop-projects</span>
+            <h3 class="project-card-title">OOP-Projects</h3>
+          </div>
+          <p class="project-card-desc">Object-oriented programming implementations in Java, C++, and Python highlighting design patterns, inheritance, and polymorphism.</p>
+          <div class="project-card-footer">
+            <span class="chip">Java</span>
+            <a href="https://github.com/abdulhayykhan/OOP-Projects" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 45: Python-Projects -->
+        <article class="terminal-panel project-card tilt-card" data-title="Python-Projects" data-lang="python" data-tags="python tkinter desktop gui quiz" data-desc="Collection of practical Python desktop applications with Tkinter GUIs, including security utilities, quizzes, and games.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#45 repo://python-projects</span>
+            <h3 class="project-card-title">Python-Projects</h3>
+          </div>
+          <p class="project-card-desc">Collection of practical Python desktop applications with Tkinter GUIs, including security utilities, quizzes, and games.</p>
+          <div class="project-card-footer">
+            <span class="chip">Python</span>
+            <a href="https://github.com/abdulhayykhan/Python-Projects" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- 46: Cpp-Projects -->
+        <article class="terminal-panel project-card tilt-card" data-title="Cpp-Projects" data-lang="c++" data-tags="c++ console data-structures memory-management" data-desc="High-performance C++ console applications demonstrating data structures, memory management, and record tracking systems.">
+          <div class="project-card-header">
+            <span class="project-repo-index">#46 repo://cpp-projects</span>
+            <h3 class="project-card-title">Cpp-Projects</h3>
+          </div>
+          <p class="project-card-desc">High-performance C++ console applications demonstrating data structures, memory management, and record tracking systems.</p>
+          <div class="project-card-footer">
+            <span class="chip">C++</span>
+            <a href="https://github.com/abdulhayykhan/Cpp-Projects" target="_blank" rel="noopener noreferrer" class="project-repo-link">inspect repo →</a>
+          </div>
+        </article>
+
+        <!-- No results message -->
+        <div id="no-results" class="no-results-msg" style="display: none;">
+          <p>&gt; No matching repositories found. Try another search query or filter.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="terminal-panel section-card" id="stack">
+      <h2 class="card-title" style="margin-top: 0;">tech_stack --print</h2>
+      <div class="grid-2col" style="margin-top: 1.25rem;">
+        <article class="stat-card tilt-card">
+          <p class="card-meta">languages</p>
+          <div class="chip-container">
+            <span class="chip">Python</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Kotlin</span>
+            <span class="chip">C++</span>
+            <span class="chip">Java</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Dart</span>
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+          </div>
+        </article>
+
+        <article class="stat-card tilt-card">
+          <p class="card-meta">ai_ml_data</p>
+          <div class="chip-container">
+            <span class="chip">Scikit-learn</span>
+            <span class="chip">TensorFlow</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">Pandas</span>
+            <span class="chip">NumPy</span>
+            <span class="chip">Matplotlib</span>
+            <span class="chip">Seaborn</span>
+            <span class="chip">spaCy</span>
+            <span class="chip">Sentence-Transformers</span>
+            <span class="chip">ChromaDB</span>
+            <span class="chip">Google ADK</span>
+            <span class="chip">Random Forest</span>
+            <span class="chip">Monte Carlo Simulations</span>
+          </div>
+        </article>
+
+        <article class="stat-card tilt-card">
+          <p class="card-meta">frameworks_tools</p>
+          <div class="chip-container">
+            <span class="chip">FastAPI</span>
+            <span class="chip">Flask</span>
+            <span class="chip">Next.js 16</span>
+            <span class="chip">Streamlit</span>
+            <span class="chip">Jetpack Compose</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">SQLAlchemy</span>
+            <span class="chip">Git</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">Firebase</span>
+            <span class="chip">Tailwind CSS v4</span>
+            <span class="chip">Railway</span>
+          </div>
+        </article>
+
+        <article class="stat-card tilt-card">
+          <p class="card-meta">databases</p>
+          <div class="chip-container">
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">SQLite</span>
+            <span class="chip">ChromaDB</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">Firebase Firestore</span>
+            <span class="chip">Oracle</span>
+          </div>
+        </article>
+
+        <article class="stat-card tilt-card" style="grid-column: 1 / -1;">
+          <p class="card-meta">tools_concepts</p>
+          <div class="chip-container">
+            <span class="chip">Agentic AI</span>
+            <span class="chip">RESTful APIs</span>
+            <span class="chip">JWT Authentication</span>
+            <span class="chip">WebSockets</span>
+            <span class="chip">E2EE Encryption</span>
+            <span class="chip">Pytest</span>
+            <span class="chip">Unittest</span>
+            <span class="chip">SDLC</span>
+            <span class="chip">System Architecture</span>
+            <span class="chip">Technical Documentation</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="terminal-panel contact-window tilt-card" id="contact">
+      <h2 class="hero-name text-glow" style="font-size: 1.8rem;">$ collaborate --with abdulhayykhan</h2>
+      <p class="hero-bio" style="margin-top: 0.75rem;">
+        Interested in AI engineering, backend systems development, or intelligent product collaboration?
+        Let&apos;s connect and build something valuable.
+      </p>
+      <div class="hero-actions" style="margin-top: 1.25rem;">
+        <a href="https://github.com/abdulhayykhan" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          github --open
+        </a>
+        <a href="https://www.linkedin.com/in/abdulhayykhan/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          linkedin --connect
+        </a>
+        <a href="./Abdul_Hayy_Khan_Resume.pdf" download class="btn-outline">
+          download cv
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>terminal://portfolio &bull; crafted with vanilla html/css/js &bull; zero build dependencies</p>
+      <p>Made with &#10084; by <a href="https://www.linkedin.com/in/abdulhayykhan/" target="_blank" rel="noopener noreferrer">Abdul Hayy Khan</a> &bull; Open-source under MIT License</p>
+    </footer>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="./js/main.js"></script>
+</body>
+</html>
