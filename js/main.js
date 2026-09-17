@@ -385,7 +385,8 @@
 
     let ticking = false;
     function updateNavbar() {
-      const isScrolled = window.scrollY > 15;
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+      const isScrolled = scrollY > 8;
       navbar.classList.toggle("nav-scrolled", isScrolled);
       ticking = false;
     }

@@ -20,7 +20,7 @@
   --bg-page: #02050b;
   --bg-surface: rgba(5, 13, 24, 0.88);
   --bg-surface-alt: #091423;
-  --bg-nav: rgba(6, 16, 27, 0.88);
+  --bg-nav: rgba(4, 10, 20, 0.55);
   --bg-header-bar: #050a07;
   --bg-chip: rgba(10, 36, 14, 0.8);
   --bg-input: rgba(6, 17, 29, 0.92);
@@ -52,7 +52,7 @@
   --bg-page: #f4fbff;
   --bg-surface: rgba(255, 255, 255, 0.94);
   --bg-surface-alt: #eaf6ff;
-  --bg-nav: rgba(255, 255, 255, 0.9);
+  --bg-nav: rgba(244, 251, 255, 0.65);
   --bg-header-bar: #e1f2fe;
   --bg-chip: rgba(224, 242, 254, 0.95);
   --bg-input: #ffffff;
@@ -259,8 +259,8 @@ img, svg {
   background: var(--bg-nav);
   border: 1px solid var(--border-color);
   box-shadow: var(--panel-shadow);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px) saturate(160%);
+  -webkit-backdrop-filter: blur(8px) saturate(160%);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -279,34 +279,47 @@ img, svg {
   }
 }
 
-/* Scrolled / Faded Navigation State */
+/* Scrolled / Faded Navigation State (Background content clearly appears behind) */
 .nav-panel.nav-scrolled {
-  background: rgba(3, 8, 18, 0.78);
-  backdrop-filter: blur(20px) saturate(190%);
-  -webkit-backdrop-filter: blur(20px) saturate(190%);
-  border-color: rgba(119, 255, 112, 0.38);
+  background: rgba(2, 6, 14, 0.40) !important;
+  backdrop-filter: blur(6px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(180%) !important;
+  border-color: rgba(119, 255, 112, 0.45);
   box-shadow:
-    0 12px 36px -4px rgba(0, 0, 0, 0.75),
-    0 0 24px rgba(93, 255, 121, 0.16),
+    0 10px 30px -5px rgba(0, 0, 0, 0.65),
+    0 0 20px rgba(93, 255, 121, 0.16),
     0 1px 0 rgba(119, 255, 112, 0.25);
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding-top: 0.38rem;
+  padding-bottom: 0.38rem;
 }
 
 [data-theme="light"] .nav-panel.nav-scrolled {
-  background: rgba(244, 251, 255, 0.82);
-  border-color: rgba(14, 165, 233, 0.38);
+  background: rgba(244, 251, 255, 0.52) !important;
+  backdrop-filter: blur(6px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(6px) saturate(180%) !important;
+  border-color: rgba(14, 165, 233, 0.45);
   box-shadow:
-    0 12px 36px -4px rgba(15, 23, 42, 0.12),
-    0 0 24px rgba(14, 165, 233, 0.15),
+    0 10px 30px -5px rgba(15, 23, 42, 0.1),
+    0 0 20px rgba(14, 165, 233, 0.14),
     0 1px 0 rgba(14, 165, 233, 0.22);
 }
 
 @media (min-width: 768px) {
   .nav-panel.nav-scrolled {
-    padding-top: 0.55rem;
-    padding-bottom: 0.55rem;
+    padding-top: 0.52rem;
+    padding-bottom: 0.52rem;
   }
+}
+
+/* Ensure mobile dropdown menu stays fully readable when expanded */
+.nav-panel.menu-open {
+  background: rgba(3, 8, 18, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+[data-theme="light"] .nav-panel.menu-open {
+  background: rgba(244, 251, 255, 0.96) !important;
 }
 
 .nav-brand {
