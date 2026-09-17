@@ -148,59 +148,114 @@
       </article>
     </section>
 
-    <!-- Highlights Section: Experience, Spotlight, Language Distribution -->
-    <section class="grid-3col" id="highlights">
-      <article class="terminal-panel section-card tilt-card">
+    <!-- Highlights Section -->
+    <div id="highlights">
+
+      <!-- Experience — full width, accordion dropdowns -->
+      <article class="terminal-panel section-card exp-card">
         <p class="card-meta">~/experience/internships.log</p>
         <h3 class="card-title">experience[]</h3>
-        <ul class="card-list">
-          <li>
-            &gt; <strong>Alkhidmat Foundation Pakistan</strong> — Information Technology Intern
-            (Jul 2026 - Sep 2026, Karachi, Hybrid):<br>
-            Led the Emergency Blood Response Platform (QATRA) as part of a 6-person team.
-            Engineered a full-stack FastAPI + Supabase platform connecting verified patients
-            with nearby donors across Karachi; Apple HIG-compliant PWA with real-time Leaflet
-            geo-mapping and a directory of 80+ hospitals; automated OCR hospital-slip processing
-            and cryptographic CNIC verification; sub-2s emergency feed via TTL caching and SQL
-            optimization; CI/CD on GitHub Actions with Pytest suites.
-          </li>
-          <li>
-            &gt; <strong>FlyRank</strong> — ML Engineering Intern
-            (Jun 2026 - Sep 2026, 4 months):<br>
-            Capstone: content opportunity scoring with Random Forest achieving
-            Precision@50: 0.740 vs 0.340 baseline.
-          </li>
-          <li>&gt; <strong>DevelopersHub</strong> — Software Dev Intern (Jul 2025 - Sept 2025): FastAPI, PostgreSQL, JWT auth, WebSockets.</li>
-          <li>&gt; <strong>CodeAlpha</strong> — Python Intern (Jul 2025 - Aug 2025): Automation, chatbot, and algorithmic tools.</li>
-        </ul>
+
+        <!-- 1. Alkhidmat Foundation -->
+        <details class="exp-item" open>
+          <summary class="exp-summary">
+            <span class="exp-org">Alkhidmat Foundation Pakistan</span>
+            <span class="exp-role">Information Technology Intern</span>
+            <span class="exp-date">Jul 2026 – Sep 2026 · Karachi, Hybrid</span>
+            <span class="exp-chevron" aria-hidden="true">▾</span>
+          </summary>
+          <ul class="exp-bullets">
+            <li>Led development of <strong>QATRA</strong>, an emergency blood response platform, as part of a 6-person cross-functional team</li>
+            <li>Engineered full-stack backend with <strong>FastAPI + Supabase</strong> to match verified patients with nearby donors across Karachi in real time</li>
+            <li>Designed an <strong>Apple HIG-compliant Progressive Web App</strong> with real-time <strong>Leaflet</strong> geo-mapping and an interactive directory of 80+ Karachi hospitals</li>
+            <li>Built automated <strong>hospital-slip OCR processing pipeline</strong> and cryptographic <strong>CNIC identity verification</strong> to eliminate fraudulent emergency requests</li>
+            <li>Implemented <strong>in-memory TTL caching</strong> and SQL query optimization achieving <strong>sub-2s emergency feed response times</strong></li>
+            <li>Automated <strong>CI/CD workflows</strong> on GitHub Actions with Pytest suites and zero-downtime deployments</li>
+          </ul>
+        </details>
+
+        <!-- 2. FlyRank -->
+        <details class="exp-item">
+          <summary class="exp-summary">
+            <span class="exp-org">FlyRank</span>
+            <span class="exp-role">ML Engineering Intern</span>
+            <span class="exp-date">Jun 2026 – Sep 2026 · 4 months</span>
+            <span class="exp-chevron" aria-hidden="true">▾</span>
+          </summary>
+          <ul class="exp-bullets">
+            <li>Delivered ML engineering capstone on <strong>content opportunity scoring</strong> — identifying high-impact content gaps from search performance data</li>
+            <li>Trained a <strong>Random Forest classifier</strong> with feature engineering across engagement, recency, and authority signals</li>
+            <li>Achieved <strong>Precision@50: 0.740</strong> versus 0.340 baseline — a 2.17× lift in identifying top opportunities</li>
+            <li>Built a full <strong>Precision@K evaluation framework</strong> for comparing model variants and ranking strategy iterations</li>
+            <li>Documented findings as a <strong>research-grade report</strong> with reproducible Jupyter notebooks</li>
+          </ul>
+        </details>
+
+        <!-- 3. DevelopersHub -->
+        <details class="exp-item">
+          <summary class="exp-summary">
+            <span class="exp-org">DevelopersHub</span>
+            <span class="exp-role">Software Development Intern</span>
+            <span class="exp-date">Jul 2025 – Sep 2025 · 3 months</span>
+            <span class="exp-chevron" aria-hidden="true">▾</span>
+          </summary>
+          <ul class="exp-bullets">
+            <li>Built a <strong>Flask + SQLAlchemy task management system</strong> with Jinja2 templating, RESTful routing, and SQLite persistence; added full Unittest coverage</li>
+            <li>Upgraded to an <strong>Enhanced FastAPI version</strong> with Pydantic v2 validation, async endpoints, and comprehensive test suites</li>
+            <li>Implemented <strong>JWT-based authentication</strong> with token refresh flows and role-based access control</li>
+            <li>Integrated <strong>WebSocket real-time communication</strong> for live collaboration using FastAPI's native async WS support</li>
+            <li>Designed and maintained <strong>PostgreSQL schemas</strong> with migration scripts and query-optimized indexes for production workloads</li>
+          </ul>
+        </details>
+
+        <!-- 4. CodeAlpha -->
+        <details class="exp-item">
+          <summary class="exp-summary">
+            <span class="exp-org">CodeAlpha</span>
+            <span class="exp-role">Python Development Intern</span>
+            <span class="exp-date">Jul 2025 – Aug 2025 · 2 months</span>
+            <span class="exp-chevron" aria-hidden="true">▾</span>
+          </summary>
+          <ul class="exp-bullets">
+            <li>Built a collection of <strong>interactive Streamlit web applications</strong> with real-time external REST API integrations and live translation utilities</li>
+            <li>Developed an <strong>AI-powered chatbot</strong> with context-aware dialogue handling and Python NLP tooling</li>
+            <li>Implemented <strong>algorithmic automation scripts</strong> covering data scraping, file processing, and batch operations</li>
+            <li>Created a <strong>Python desktop app</strong> (Tkinter) with Fernet symmetric encryption, password hashing, and encrypted local note storage</li>
+            <li>Applied <strong>clean code principles</strong>, modular architecture, and documented all deliverables with README guides</li>
+          </ul>
+        </details>
       </article>
 
-      <article class="terminal-panel section-card tilt-card">
-        <p class="card-meta">spotlight://flyrank-ai</p>
-        <h3 class="card-title">ML &amp; Search Intelligence</h3>
-        <p class="card-body">
-          <strong>FlyRank-AI</strong>: Machine Learning Engineering Capstone achieving
-          <strong>Precision@50: 0.740 vs 0.340 baseline</strong> for content opportunity scoring using Random Forest and precision ranking.
-        </p>
-      </article>
+      <!-- Spotlight + Languages — 2 columns -->
+      <div class="highlights-2col">
+        <article class="terminal-panel section-card tilt-card">
+          <p class="card-meta">spotlight://flyrank-ai</p>
+          <h3 class="card-title">ML &amp; Search Intelligence</h3>
+          <p class="card-body">
+            <strong>FlyRank-AI</strong>: Machine Learning Engineering Capstone achieving
+            <strong>Precision@50: 0.740 vs 0.340 baseline</strong> for content opportunity scoring using Random Forest and precision ranking.
+          </p>
+        </article>
 
-      <article class="terminal-panel section-card tilt-card">
-        <p class="card-meta">language_distribution.json</p>
-        <h3 class="card-title">languages[]</h3>
-        <div class="chip-container">
-          <span class="chip">Python: 24</span>
-          <span class="chip">TypeScript: 8</span>
-          <span class="chip">Kotlin: 3</span>
-          <span class="chip">Java: 3</span>
-          <span class="chip">JavaScript: 2</span>
-          <span class="chip">C++: 1</span>
-          <span class="chip">SQL: 1</span>
-          <span class="chip">Dart: 1</span>
-          <span class="chip">HTML: 1</span>
-          <span class="chip">Shell: 1</span>
-        </div>
-      </article>
-    </section>
+        <article class="terminal-panel section-card tilt-card">
+          <p class="card-meta">language_distribution.json</p>
+          <h3 class="card-title">languages[]</h3>
+          <div class="chip-container">
+            <span class="chip">Python: 24</span>
+            <span class="chip">TypeScript: 8</span>
+            <span class="chip">Kotlin: 3</span>
+            <span class="chip">Java: 3</span>
+            <span class="chip">JavaScript: 2</span>
+            <span class="chip">C++: 1</span>
+            <span class="chip">SQL: 1</span>
+            <span class="chip">Dart: 1</span>
+            <span class="chip">HTML: 1</span>
+            <span class="chip">Shell: 1</span>
+          </div>
+        </article>
+      </div>
+
+    </div>
 
     <!-- Projects Section with Live Search & Filtering -->
     <section class="terminal-panel section-card" id="projects">
