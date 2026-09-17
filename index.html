@@ -50,15 +50,31 @@
         <img src="./icon.svg" alt="AHK Logo" class="nav-brand-icon" width="24" height="24">
         <span class="nav-brand-text">terminal://abdulhayykhan</span>
       </div>
-      <div class="nav-links">
-        <a href="#about" class="nav-btn">about</a>
-        <a href="#highlights" class="nav-btn">highlights</a>
-        <a href="#projects" class="nav-btn">projects</a>
-        <a href="#stack" class="nav-btn">stack</a>
-        <a href="#contact" class="nav-btn">contact</a>
+
+      <!-- Right Action Controls (Theme Toggle + Mobile Menu Trigger) -->
+      <div class="nav-actions">
         <button type="button" class="nav-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch theme">
           <span id="theme-icon" aria-hidden="true">☀</span>
         </button>
+        <button
+          type="button"
+          class="nav-btn mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span class="menu-icon" aria-hidden="true">☰</span>
+        </button>
+      </div>
+
+      <!-- Navigation Links (Inline on Desktop, Dropdown on Mobile) -->
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-btn nav-link">about</a>
+        <a href="#highlights" class="nav-btn nav-link">highlights</a>
+        <a href="#projects" class="nav-btn nav-link">projects</a>
+        <a href="#stack" class="nav-btn nav-link">stack</a>
+        <a href="#contact" class="nav-btn nav-link">contact</a>
       </div>
     </nav>
 

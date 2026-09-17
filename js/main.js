@@ -254,9 +254,75 @@
   }
 
   // --------------------------------------------------------------------------
-  // 5. Init
+  // 5. Mobile Navigation Dropdown Toggle
+  // --------------------------------------------------------------------------
+  function initMobileMenu() {
+    const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("mobile-menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    if (!navbar || !menuToggle || !navLinks) return;
+
+    const links = navLinks.querySelectorAll(".nav-link");
+
+    function closeMenu() {
+      navbar.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      const icon = menuToggle.querySelector(".menu-icon");
+      if (icon) icon.textContent = "☰";
+    }
+
+    function openMenu() {
+      navbar.classList.add("menu-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+      const icon = menuToggle.querySelector(".menu-icon");
+      if (icon) icon.textContent = "✕";
+    }
+
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const isOpen = navbar.classList.contains("menu-open");
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close menu when any navigation link is clicked
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu();
+      });
+    });
+
+    // Close menu when tapping anywhere outside navbar
+    document.addEventListener("click", function (e) {
+      if (navbar.classList.contains("menu-open") && !navbar.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Close menu on Escape key press
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navbar.classList.contains("menu-open")) {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+
+    // Clean up menu-open state if viewport resized to desktop
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 768 && navbar.classList.contains("menu-open")) {
+        closeMenu();
+      }
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 6. Init
   // --------------------------------------------------------------------------
   applyTheme(getPreferredTheme());
   renderProjectGrid();
   initSearch();
+  initMobileMenu();
 })();
