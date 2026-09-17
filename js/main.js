@@ -377,10 +377,40 @@
   }
 
   // --------------------------------------------------------------------------
-  // 6. Init
+  // 6. Scroll-Aware Navbar Faded Styling
+  // --------------------------------------------------------------------------
+  function initNavbarScroll() {
+    const navbar = document.getElementById("navbar");
+    if (!navbar) return;
+
+    let ticking = false;
+    function updateNavbar() {
+      const isScrolled = window.scrollY > 15;
+      navbar.classList.toggle("nav-scrolled", isScrolled);
+      ticking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateNavbar);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    // Initial check on load
+    updateNavbar();
+  }
+
+  // --------------------------------------------------------------------------
+  // 7. Init
   // --------------------------------------------------------------------------
   applyTheme(getPreferredTheme());
   renderProjectGrid();
   initSearch();
   initMobileMenu();
+  initNavbarScroll();
 })();
