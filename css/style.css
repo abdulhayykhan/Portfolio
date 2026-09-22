@@ -989,6 +989,17 @@ img, svg {
   background-color: rgba(3, 105, 161, 0.035);
 }
 
+/* While closing, smoothly fade out active accent border & tint */
+details[open].is-closing {
+  border-left-color: transparent !important;
+  background-color: transparent !important;
+}
+
+/* While closing, disable pointer events on bullets */
+details[open].is-closing .exp-bullets {
+  pointer-events: none;
+}
+
 .exp-summary {
   display: flex;
   flex-wrap: wrap;
@@ -1069,6 +1080,13 @@ details[open] > .exp-summary .exp-chevron {
   text-shadow: 0 0 8px var(--glow-primary);
 }
 
+/* While closing, smoothly spin chevron back to 0deg */
+details[open].is-closing > .exp-summary .exp-chevron {
+  transform: rotate(0deg) scale(1) !important;
+  color: var(--text-dim) !important;
+  text-shadow: none !important;
+}
+
 .exp-bullets {
   list-style: none;
   padding: 0 0.2rem 0.85rem 0.2rem;
@@ -1078,8 +1096,8 @@ details[open] > .exp-summary .exp-chevron {
   gap: 0.45rem;
 }
 
-/* Smooth unfolding of bullets container */
-details[open] .exp-bullets {
+/* Fallback unfolding animation if JS is disabled */
+.exp-card:not(.js-accordion) details[open] .exp-bullets {
   animation: expSlideDown 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -1094,16 +1112,16 @@ details[open] .exp-bullets {
   }
 }
 
-/* Staggered sequential slide-in for each bullet item */
-details[open] .exp-bullets li {
+/* Staggered sequential slide-in for each bullet item on open */
+details[open]:not(.is-closing) .exp-bullets li {
   animation: expBulletStagger 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-details[open] .exp-bullets li:nth-child(1) { animation-delay: 30ms; }
-details[open] .exp-bullets li:nth-child(2) { animation-delay: 65ms; }
-details[open] .exp-bullets li:nth-child(3) { animation-delay: 100ms; }
-details[open] .exp-bullets li:nth-child(4) { animation-delay: 135ms; }
-details[open] .exp-bullets li:nth-child(5) { animation-delay: 170ms; }
-details[open] .exp-bullets li:nth-child(6) { animation-delay: 205ms; }
+details[open]:not(.is-closing) .exp-bullets li:nth-child(1) { animation-delay: 30ms; }
+details[open]:not(.is-closing) .exp-bullets li:nth-child(2) { animation-delay: 65ms; }
+details[open]:not(.is-closing) .exp-bullets li:nth-child(3) { animation-delay: 100ms; }
+details[open]:not(.is-closing) .exp-bullets li:nth-child(4) { animation-delay: 135ms; }
+details[open]:not(.is-closing) .exp-bullets li:nth-child(5) { animation-delay: 170ms; }
+details[open]:not(.is-closing) .exp-bullets li:nth-child(6) { animation-delay: 205ms; }
 
 @keyframes expBulletStagger {
   from {

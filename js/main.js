@@ -407,12 +407,13 @@
   }
 
   // --------------------------------------------------------------------------
-  // 7. Experience Section Animations
+  // 7. Experience Section Animations & Exclusive Animated Accordion
   // --------------------------------------------------------------------------
   function initExperienceAnimations() {
     const expCard = document.querySelector(".exp-card");
     if (!expCard) return;
 
+    // Viewport scroll entrance observer
     if ("IntersectionObserver" in window) {
       const expObserver = new IntersectionObserver(
         function (entries, observer) {
@@ -429,6 +430,146 @@
     } else {
       expCard.classList.add("exp-animated");
     }
+
+    // Mark card as JS-managed accordion
+    expCard.classList.add("js-accordion");
+
+    const expItems = Array.from(expCard.querySelectorAll(".exp-item"));
+
+    function shrinkExpItem(item) {
+      if (item._animation) {
+        item._animation.cancel();
+        item._animation = null;
+      }
+
+      const bullets = item.querySelector(".exp-bullets");
+      if (!bullets) {
+        item.classList.remove("is-closing");
+        item.removeAttribute("open");
+        return;
+      }
+
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        item.classList.remove("is-closing");
+        item.removeAttribute("open");
+        return;
+      }
+
+      item.classList.add("is-closing");
+      const startHeight = bullets.scrollHeight;
+      bullets.style.overflow = "hidden";
+
+      const anim = bullets.animate(
+        [
+          { height: startHeight + "px", opacity: 1, transform: "translateY(0)" },
+          { height: "0px", opacity: 0, transform: "translateY(-8px)" }
+        ],
+        {
+          duration: 220,
+          easing: "cubic-bezier(0.4, 0, 0.2, 1)"
+        }
+      );
+
+      item._animation = anim;
+
+      anim.onfinish = function () {
+        item.classList.remove("is-closing");
+        item.removeAttribute("open");
+        bullets.style.height = "";
+        bullets.style.overflow = "";
+        item._animation = null;
+      };
+
+      anim.oncancel = function () {
+        item.classList.remove("is-closing");
+        bullets.style.height = "";
+        bullets.style.overflow = "";
+        item._animation = null;
+      };
+    }
+
+    function expandExpItem(item) {
+      if (item._animation) {
+        item._animation.cancel();
+        item._animation = null;
+      }
+
+      item.classList.remove("is-closing");
+      item.setAttribute("open", "");
+
+      const bullets = item.querySelector(".exp-bullets");
+      if (!bullets) return;
+
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
+
+      bullets.style.overflow = "hidden";
+      bullets.style.height = "auto";
+      const targetHeight = bullets.scrollHeight;
+      bullets.style.height = "0px";
+
+      const anim = bullets.animate(
+        [
+          { height: "0px", opacity: 0, transform: "translateY(-8px)" },
+          { height: targetHeight + "px", opacity: 1, transform: "translateY(0)" }
+        ],
+        {
+          duration: 260,
+          easing: "cubic-bezier(0.16, 1, 0.3, 1)"
+        }
+      );
+
+      item._animation = anim;
+
+      anim.onfinish = function () {
+        bullets.style.height = "";
+        bullets.style.overflow = "";
+        item._animation = null;
+      };
+
+      anim.oncancel = function () {
+        bullets.style.height = "";
+        bullets.style.overflow = "";
+        item._animation = null;
+      };
+    }
+
+    // Attach click listeners to summaries for exclusive animated accordion
+    expItems.forEach(function (item) {
+      const summary = item.querySelector(".exp-summary");
+      if (!summary) return;
+
+      summary.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const isOpen = item.hasAttribute("open") && !item.classList.contains("is-closing");
+
+        if (isOpen) {
+          // If clicking the already open item, smoothly collapse it
+          shrinkExpItem(item);
+        } else {
+          let hasClosingItem = false;
+
+          // If another experience item is currently open, automatically close it with animation first
+          expItems.forEach(function (otherItem) {
+            if (otherItem !== item && otherItem.hasAttribute("open") && !otherItem.classList.contains("is-closing")) {
+              shrinkExpItem(otherItem);
+              hasClosingItem = true;
+            }
+          });
+
+          // If closing another item, slight offset creates a beautiful sequential "close first, then open" transition
+          if (hasClosingItem) {
+            setTimeout(function () {
+              expandExpItem(item);
+            }, 60);
+          } else {
+            expandExpItem(item);
+          }
+        }
+      });
+    });
   }
 
   // --------------------------------------------------------------------------
