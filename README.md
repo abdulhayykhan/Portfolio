@@ -181,6 +181,7 @@ foreach ($ep in $endpoints) {
 * **Specialization**: Artificial Intelligence, Distributed Backend Systems, Applied ML
 * **Professional Profiles**:
   * [GitHub Profile](https://github.com/abdulhayykhan)
+  * [Hugging Face Models & Spaces](https://huggingface.co/abdulhayykhan)
   * [LinkedIn Network](https://www.linkedin.com/in/abdulhayykhan/)
   * [Kaggle Competitions](https://kaggle.com/abdulhayykhan)
 * **Direct Communication**: `abdulhayykhan.1@gmail.com`
