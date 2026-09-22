@@ -407,11 +407,37 @@
   }
 
   // --------------------------------------------------------------------------
-  // 7. Init
+  // 7. Experience Section Animations
+  // --------------------------------------------------------------------------
+  function initExperienceAnimations() {
+    const expCard = document.querySelector(".exp-card");
+    if (!expCard) return;
+
+    if ("IntersectionObserver" in window) {
+      const expObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("exp-animated");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      expObserver.observe(expCard);
+    } else {
+      expCard.classList.add("exp-animated");
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // 8. Init
   // --------------------------------------------------------------------------
   applyTheme(getPreferredTheme());
   renderProjectGrid();
   initSearch();
   initMobileMenu();
   initNavbarScroll();
+  initExperienceAnimations();
 })();
